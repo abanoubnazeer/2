@@ -18,3 +18,8 @@ jobs:
 
       - name: List extracted files
         run: ls -la extracted_files
+- name: Unzip the file
+  run: |
+    sudo apt-get install unzip -y
+    unzip -o educenter-bootstrap-main.zip -d extracted_files/
+    ls -la extracted_files  # هذا السطر سيعرض جميع الملفات بعد فك الضغط
