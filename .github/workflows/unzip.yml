@@ -3,7 +3,7 @@ name: Unzip File
 on:
   push:
     branches:
-      - main  # يتم تشغيله عند رفع الملف إلى الفرع الرئيسي
+      - main  # سيتم تشغيله عند رفع الملفات إلى الفرع الرئيسي
 
 jobs:
   unzip:
@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Unzip the file
-        run: unzip -o educenter-bootstrap-main.zip -d extracted_files
+        run: unzip -o educenter-bootstrap-main.zip -d extracted_files/
 
       - name: List extracted files
         run: ls -la extracted_files
