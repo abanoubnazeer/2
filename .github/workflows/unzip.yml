@@ -1,0 +1,20 @@
+name: Unzip File
+
+on:
+  push:
+    branches:
+      - main  # يتم تشغيله عند رفع الملف إلى الفرع الرئيسي
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Unzip the file
+        run: unzip -o educenter-bootstrap-main.zip -d extracted_files
+
+      - name: List extracted files
+        run: ls -la extracted_files
